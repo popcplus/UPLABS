@@ -8,6 +8,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://popcplus.github.io/',
+  site: 'https://uplabs.space/',
   integrations: [react(), tailwind()]
 });
