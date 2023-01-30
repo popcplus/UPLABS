@@ -1,70 +1,57 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Span from '../components/Span';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Span from "../components/Span";
+import HcfLayout from "../layouts/HcfLayout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">UPLABS</span></h1>
-		<ul role="list" class="link-card-grid">
-			This is uplabs <Span>I'm within a custom span</Span>
-		</ul>
-
-		<a href="/markdown" class="font-bold">link to markdown page</a>
-		<p>********************************</>
-			<p></>
-				<p>What is UPLABS?
-					We are a bicycle-orientated company, specializing in lifting products and systems. UPLABS provides products and solutions to make your life easier as a bicycle user and/or mechanic, particularly the heavier e-bicycle range.
-					We tailor to the needs of mechanics by providing electrical mechanisms to help assist in day-to-day work such as our FIX-UP and CRANK-UP product lines.
-					Additionally, we help with logistics in like-minded innovative systems. Such as the towbar our towbar interface mechanism BRIDGE-UP.
-					</>
-			
-
-	</main>
-</Layout>
+<HcfLayout title="Welcome to UPLABS">
+  <main class="grow">
+    <h1>Welcome to <span class="text-gradient">UPLABS</span></h1>
+  </main>
+</HcfLayout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    line-height: 1.6;
+    margin: 1rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+  .instructions code {
+    font-size: 0.875em;
+    font-weight: bold;
+    background: rgba(var(--accent), 12%);
+    color: rgb(var(--accent));
+    border-radius: 4px;
+    padding: 0.3em 0.45em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
 </style>
