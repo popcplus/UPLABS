@@ -1,16 +1,27 @@
-<div>
+<div class="flex flex-row justify-between p-16">
   <div>UPLABS logo goes here</div>
   <nav>
-    <ul>
-      <li>Home</li>
+    <ul class="nav-list flex flex-row space-x-6">
+      <li><a href="/">Home</a></li>
       <li>Products</li>
       <li>Shop</li>
       <li>
-        <a class="text-primary hover:text-primary-dark" href="/our-story">
-          Our story
-        </a>
+        <a href="/our-story"> Our story</a>
       </li>
       <li>Contact us</li>
     </ul>
   </nav>
 </div>
+
+<style>
+  .nav-list li {
+    font-weight: bold;
+  }
+
+  .nav-list li:hover {
+    color: rgb(var(--accent));
+    cursor: pointer;
+    transform: scale(1.2) skew(-0.2rad);
+    transition: all 0.1s;
+  }
+</style>
