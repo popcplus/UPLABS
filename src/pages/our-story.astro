@@ -1,13 +1,12 @@
 ---
-import MainContainer from "../components/MainContainer.astro";
+import Main from "../components/Main.astro";
 import HcfLayout from "../layouts/HcfLayout.astro";
 ---
 
 <HcfLayout title="Our Story">
-  <MainContainer class="grow">
+  <Main class="grow">
     <h1>Our story</h1>
     <article>
-      
       <p>
         We are a bicycle-orientated company, specializing in lifting products
         and systems. UPLABS provides products and solutions to make your life
@@ -21,42 +20,46 @@ import HcfLayout from "../layouts/HcfLayout.astro";
     </article>
 
     <br\>
-    <title>Company Composition</title>
-    <h1>Company Composition</h1>
+      <title>Company Composition</title>
+      <h1>Company Composition</h1>
 
-    <p>
+      <p>
+        <h1>Co-Founder</h1>
+        <br\>
+          <a href="https://www.linkedin.com/in/andrew-andy-babbage-22b3865b/">
+            Andrew Babbage Linkedin _
+          </a>
+          <br\>
+            <div>
+              <img
+                class="andy-chris"
+                src="/images/Chris_Inshop.jpg"
+                alt="uplab logo"
+              />
+            </div>
+            <br\>
+              <h1>Co-Founder</h1>
+              <a href="https://www.linkedin.com/in/cam-styles/">
+                Cameron Styles Linkedin _
+              </a>
 
-      <h1>Co-Founder</h1>
-      <br\>
-      <a href="https://www.linkedin.com/in/andrew-andy-babbage-22b3865b/"> Andrew Babbage Linkedin _ </a>
-      <br\>
-      <div>
-        <img class="andy-chris" src="/images/Chris_Inshop.jpg" alt="uplab logo" />
-      </div>
-      <br\>
-      <h1>Co-Founder</h1>
-      <a href="https://www.linkedin.com/in/cam-styles/"> Cameron Styles Linkedin _ </a>
+              <h1 class="contributers">Contributers</h1>
+            </br\>
+          </br\>
+        </br\>
 
-      <h1 class= "contributers">Contributers</h1>
-      
-           
-    </p>
+        <style>
+          main {
+            margin: auto;
+            padding: 1.5rem;
+            max-width: 60ch;
+          }
 
-  </MainContainer>
+          .andy-chris {
+            width: 200px;
+            height: 200px;
+          }
+        </style>
+      </p></br\>
+  </Main>
 </HcfLayout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-
-  .andy-chris {
-    width: 200px;
-    height: 200px;
-  }
-
-  </style>
-
-
