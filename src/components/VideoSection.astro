@@ -1,35 +1,29 @@
+---
+import { log } from "astro/dist/core/logger/core";
+
+const SectionTitles = "Welcome to up labs, an NZ-based tech company".split(
+    /\s+/
+);
+console.log("titles", SectionTitles);
+---
+
 <div id="background-container" class="background-container">
     <div id="video-container" class="video-container">
-        <video src="/videos/fly-through.mp4" id="bg-video"></video>
+        <video src="/videos/fly-through.mov" id="bg-video"></video>
     </div>
 </div>
-<div class="scroll-container" id="scroll-container">
-    <section class="step">
-        <div>
-            <h3>My</h3>
-        </div>
-    </section>
-    <section class="step">
-        <div>
-            <h3>Name</h3>
-        </div>
-    </section>
-    <section class="step">
-        <div>
-            <h3>Is</h3>
-        </div>
-    </section>
-    <section class="step">
-        <div>
-            <h3>Andy</h3>
-        </div>
-    </section>
-    <section class="step">
-        <div>
-            <h3>Babbage</h3>
-        </div>
-    </section>
-</div>
+<div class="h-[400vh]"></div>
+<!-- <div class="scroll-container" id="scroll-container">
+    {
+        SectionTitles.map((title) => (
+            <section class="step">
+                <div>
+                    <h3>{title}</h3>
+                </div>
+            </section>
+        ))
+    }
+</div> -->
 
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
@@ -46,38 +40,81 @@
     video.currentTime = 0;
 
     let sections = gsap.utils.toArray(".step");
-    sections.forEach((step, i) => {
-        ScrollTrigger.create({
-            trigger: step,
-            start: "bottom bottom",
-            end: "+=1000",
-            pin: true,
-            anticipatePin: 1,
-        });
 
-        gsap.fromTo(
-            video,
-            { currentTime: 3 * i },
-            {
-                scrollTrigger: {
-                    trigger: step,
-                    scrub: 2,
-                    start: "top bottom",
-                    end: "bottom bottom",
-                },
-                currentTime: 3 * (i + 1),
-                duration: 1,
-                ease: "none",
-            }
+    function addGsapMotionWhenVideoReady() {
+        // const durationPerSection = video.duration / sections.length;
+        // console.log(
+        //     "duration",
+        //     video.duration,
+        //     "duration per section",
+        //     durationPerSection
+        // );
+        // gsap.fromTo(
+        //     video,
+        //     { pause: true },
+        //     {
+        //         scrollTrigger: {
+        //             trigger: video,
+        //             start: "top bottom",
+        //             toggleActions: "play pause",
+        //         },
+        //     }
+        // );
+        // sections.forEach((step, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: step,
+        //         start: "center center",
+        //         end: "+=1000",
+        //         // pin: true,
+        //         // anticipatePin: 1,
+        //     });
+        //     gsap.fromTo(
+        //         video,
+        //         { currentTime: durationPerSection * i },
+        //         {
+        //             scrollTrigger: {
+        //                 trigger: step,
+        //                 scrub: durationPerSection,
+        //                 start: "center center",
+        //                 end: "+=1000",
+        //             },
+        //             duration: durationPerSection,
+        //             currentTime: durationPerSection * (i + 1),
+        //             ease: "none",
+        //         }
+        //     );
+        // });
+        // gsap.to("#bg-video", {
+        //     scrollTrigger: {
+        //         scrub: true,
+        //     },
+        // });
+        window.addEventListener("scroll", scrollVideo);
+    }
+    video.addEventListener("loadedmetadata", addGsapMotionWhenVideoReady);
+
+    function scrollVideo() {
+        const duration = video.duration;
+        let scrollPosition =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0;
+
+        const docHeight = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
         );
-    });
-
-    gsap.to("#bg-video", {
-        scrollTrigger: {
-            scrub: true,
-        },
-        scale: 1.5,
-    });
+        const windowHeight =
+            window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight;
+        const scrollDifference = docHeight - windowHeight;
+        video.currentTime = (scrollPosition / scrollDifference) * duration;
+    }
 </script>
 
 <style>
