@@ -1,10 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Span from "../components/Span";
-import HcfLayout from "../layouts/HcfLayout.astro";
-import Main from "../components/Main.astro";
 import VideoSection from "../components/VideoSection.astro";
+import Header from "../components/layouts/Header.astro";
+import PageTemplate from "../components/layouts/PageTemplate.astro";
 ---
 
-<VideoSection />
+<PageTemplate title="Uplabs">
+    <VideoSection />
+    <div id="scroll-stage">
+        <Header />
+        <h1 class="text-white">
+            <span>We'reg</span>&nbsp;
+            <span
+                class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800"
+                >UPLABS</span
+            >
+        </h1>
+    </div>
+</PageTemplate>
