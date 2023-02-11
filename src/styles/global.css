@@ -3,8 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    h1 {
-        @apply italic;
+@layer base {}
+
+@layer utilities {
+    .gradient-text-clip {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600
     }
 }

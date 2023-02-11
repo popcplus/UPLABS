@@ -15,6 +15,9 @@ module.exports = {
 					light: colors.blue[400],
 					dark: colors.blue[900]
 				}
+			},
+			scale: {
+				'80': '.8'
 			}
 		},
 	},

@@ -1,0 +1,95 @@
+<div id="intro-container" class="z-[-1]">
+    <div id="intro-block-welcome" class="intro-block h-screen tracking-wider">
+        <div class="absolute top-48 left-1/3 shift-to-left -ml-56">
+            <h2
+                id="welcome-to"
+                class="text-7xl text-gray-400 scale-y-80 font-extralight"
+            >
+                We<span id="lcome-to">lcome to</span><span
+                    id="are"
+                    class="hidden opacity-0">'re specialised in</span
+                >
+            </h2>
+            <h1 id="uplabs" class="gradient-text-clip text-9xl font-medium">
+                UPLABS
+            </h1>
+            <h1
+                id="specialised-in"
+                class="mt-4 gradient-text-clip text-8xl font-medium pb-6"
+            >
+                <span>lifting products</span><br />
+                <span class="text-gray-400 scale-y-80 font-extralight text-7xl"
+                    >and</span
+                >
+                <span>systems</span>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tl = gsap.timeline({
+        default: { ease: "power4.inOut", duration: 2 },
+    });
+    tl.fromTo(
+        "#welcome-to",
+        {
+            opacity: 0,
+        },
+        {
+            opacity: 1,
+            duration: 1,
+        }
+    )
+        .fromTo(
+            "#uplabs",
+            {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%",
+                x: "-10%",
+                scaleX: "80%",
+                y: "50%",
+                opacity: 0,
+            },
+            {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%",
+                opacity: 1,
+                scaleX: "100%",
+                x: "0%",
+                y: 0,
+                duration: 0.8,
+            }
+        )
+        .fromTo("#header", { opacity: 0 }, { opacity: 1, duration: 1 })
+        .fromTo(
+            "#video-shade",
+            { background: "rgba(0,0,0,1)" },
+            { background: "rgba(0,0,0,0.8", currentTime: 0, duration: 2 }
+        )
+        .to("#uplabs", { display: "none", duration: 0.5, opacity: 0 })
+        .to(
+            "#lcome-to",
+            { display: "none", duration: 0.5, opacity: 0 },
+            "-=0.5"
+        )
+        .to("#are", { display: "inline", duration: 0.5, opacity: 1 })
+        .fromTo(
+            "#specialised-in",
+            {
+                display: "none",
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%",
+                x: "-10%",
+                scaleX: "80%",
+                y: "50%",
+                opacity: 0,
+            },
+            {
+                display: "block",
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%",
+                opacity: 1,
+                scaleX: "100%",
+                x: "0%",
+                y: 0,
+                duration: 0.8,
+            }
+        );
+</script>

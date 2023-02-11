@@ -1,19 +1,12 @@
 ---
-import VideoSection from "../components/VideoSection.astro";
+import VideoSection from "../components/Video.astro";
 import Header from "../components/layouts/Header.astro";
+import Intro from "../components/Intro.astro";
 import PageTemplate from "../components/layouts/PageTemplate.astro";
 ---
 
 <PageTemplate title="Uplabs">
     <VideoSection />
-    <div id="scroll-stage">
-        <Header />
-        <h1 class="text-white">
-            <span>We'reg</span>&nbsp;
-            <span
-                class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-800"
-                >UPLABS</span
-            >
-        </h1>
-    </div>
+    <Intro />
+    <Header />
 </PageTemplate>
