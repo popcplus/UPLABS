@@ -5,6 +5,26 @@
 
 @layer base {}
 
+@layer components {
+    .article {}
+
+    .article h1 {
+        @apply my-16 font-semibold scale-y-80 text-6xl
+    }
+
+    .article h2 {
+        @apply mt-16 mb-12 font-medium scale-y-80 text-5xl text-gray-200
+    }
+
+    .article h3 {
+        @apply my-12 font-medium scale-y-80 text-xl
+    }
+
+    .article p {
+        @apply my-6 leading-relaxed text-lg text-gray-400;
+    }
+}
+
 @layer utilities {
     .gradient-text-clip {
         @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-600

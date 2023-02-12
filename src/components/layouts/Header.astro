@@ -1,18 +1,32 @@
 ---
 import Logo from "../Logo.astro";
+import { cva } from "class-variance-authority";
+
+const header = cva(
+  "fixed top-0 left-0 w-full flex flex-row justify-between items-center px-16 text-gray-200 z-50",
+  {
+    variants: {
+      blur: {
+        true: "bg-black/50 backdrop-blur",
+      },
+    },
+    defaultVariants: {
+      blur: false,
+    },
+  }
+);
+
+const { blur } = Astro.props;
 ---
 
-<div
-  id="header"
-  class="fixed top-0 left-0 w-full flex flex-row justify-between items-center px-16 text-gray-200 z-50"
->
+<div id="header" class={header({ blur })}>
   <Logo />
   <nav class="py-10">
     <ul class="nav-list flex flex-row items-center text-md space-x-16">
       <li><a href="/">Home</a></li>
       <li><a href="/products">Products</a></li>
-      <li><a href="our-story">Our Story</a></li>
-      <li><a href="contact-us">Contact Us</a></li>
+      <li><a href="/our-story">Our Story</a></li>
+      <li><a href="/contact-us">Contact Us</a></li>
     </ul>
   </nav>
 </div>

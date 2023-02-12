@@ -7,9 +7,8 @@ const { title } = Astro.props;
 ---
 
 <PageTemplate title={title}>
-  <div class="min-h-screen flex flex-col">
-    <Header />
+  <div class="min-h-screen flex flex-col bg-black">
+    <Header blur={true} />
     <slot />
-    <Footer />
   </div>
 </PageTemplate>
